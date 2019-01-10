@@ -1,8 +1,9 @@
 require "rails_helper"
+require 'support/features/sign_in'
 
 feature "User creates a new todo" do 
   scenario "Successfully" do
-    visit root_path
+    sign_in
     click_on "Add a new TODO"
     fill_in "Title", with: "Learn Rails TDD"
     click_on "Submit"
